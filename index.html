@@ -9,17 +9,25 @@
     <label>お名前</label>
     <input name="お名前" type="text">
   </div>
-
   <div>
     <label>メールアドレス [必須]</label>
     <input name="メールアドレス" type="text" data-formrun-type="email" data-formrun-required>
     <div data-formrun-show-if-error="メールアドレス">メールアドレスを正しく入力してください</div>
   </div>
+  <div class="form-group"
+    data-formrun-class-if-success="has-success" data-formrun-class-if-error="has-danger" data-formrun-target="1行テキスト">
+    <label class="form-control-label" for="name">1行テキスト</label>
+    <input type="text" class="form-control" id="name" name="1行テキスト"
+            data-formrun-required data-formrun-class-if-success="form-control-success" data-formrun-class-if-error="form-control-danger">
+      <span class="text-danger" data-formrun-show-if-error="1行テキスト">1行テキストを正しく入力してください</span>
+  </div>
 
-  <div>
-    <label>お問い合わせ [必須]</label>
-    <textarea name="お問い合わせ" data-formrun-required></textarea>
-    <div data-formrun-show-if-error="お問い合わせ">お問い合わせ入力してください</div>
+  <div class="form-group"
+        data-formrun-class-if-success="has-success" data-formrun-class-if-error="has-danger" data-formrun-target="複数行テキスト">
+      <label class="form-control-label" for="body">複数行テキスト</label>
+      <textarea class="form-control" id="body" name="複数行テキスト"
+                data-formrun-required data-formrun-class-if-success="form-control-success" data-formrun-class-if-error="form-control-danger"></textarea>
+      <span class="text-danger" data-formrun-show-if-error="複数行テキスト">複数行テキストを正しく入力してください</span>
   </div>
 
   <div>
@@ -27,8 +35,10 @@
     <input type="checkbox" name="個人情報利用同意" data-formrun-required>
     <div data-formrun-show-if-error="個人情報利用同意">同意してください</div>
   </div>
-
-  <!-- ボット投稿をブロックするためのタグ -->
+  <div>
+　    <input type="file" name="添付ファイル">
+  </div>
+  <!-- "ボット投稿をブロックするためのタグ" -->
   <div class="_formrun_gotcha">
     <style media="screen">._formrun_gotcha {position:absolute!important;height:1px;width:1px;overflow:hidden;}</style>
     <label for="_formrun_gotcha">If you are a human, ignore this field</label>
